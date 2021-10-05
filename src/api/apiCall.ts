@@ -11,7 +11,7 @@ export const getRequest = async ({ url } : {url: string}) => {
 }
 
 export const deleteRequest = async ({ url } : {url: string}) => {
-  const response = await apiToken.get(url)
+  const response = await apiToken.delete(url)
   return response.data
 }
 

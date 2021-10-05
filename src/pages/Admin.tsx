@@ -1,8 +1,9 @@
-import { GET_APPOINTMENTS } from 'api/apiUrl';
+import { DELETE_APPOINTMENT, GET_APPOINTMENTS } from 'api/apiUrl';
+import ModalLayout from 'components/Modal';
 import moment from 'moment';
 import React from 'react'
 import { useQuery } from 'react-query';
-import { getRequest } from '../api/apiCall';
+import { deleteRequest, getRequest } from '../api/apiCall';
 import { queryKeys } from '../api/queryKey';
 
 export default function Admin() {
@@ -15,7 +16,27 @@ export default function Admin() {
       retry: 2
     }
     )
-    const appointments = data?.data
+    // const appointments = data?.data
+    const [appointments, setAppointments] = React.useState(data?.data)
+    React.useEffect(()=>{
+      setAppointments(data?.data)
+    },[data?.data])
+const [open, setOpen] = React.useState(false)
+const [currentAppointment, setAppointment] = React.useState(null)
+const returnAppointment = (id) => {
+  const data = appointments?.find(appointment=>appointment._id===id)
+  setAppointment(data)
+  setOpen(true)
+}
+const DeleteAppointment = (id) => {
+  deleteRequest({url: DELETE_APPOINTMENT(id)})
+  setAppointments(appointments.filter( app => app._id !== id ))
+}
+const Trigger = ({setOpen, click}) => (
+  <a href="#" className="text-indigo-600 hover:text-indigo-900" onClick={click}>
+                        View
+                      </a>
+)
   return (
         <>
       <div className="px-4 py-16 overflow-hidden bg-white sm:px-6 lg:px-8 lg:py-24">
@@ -131,12 +152,10 @@ export default function Admin() {
                     <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{appointment.email}</td>
                     <td className="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">{moment(appointment.date).format("LL")} by {appointment.time}</td>
                     <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                      <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                        View
-                      </a>
+                    <ModalLayout title={`${currentAppointment?.full_name}'s Appointment`} content={currentAppointment} trigger={<Trigger setOpen={setOpen} click={()=>returnAppointment(appointment._id)} />} open={open} setOpen={setOpen} />
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                      <a href="#" className="text-red-600 hover:text-red-900">
+                      <a href="#" className="text-red-600 hover:text-red-900" onClick={()=>DeleteAppointment(appointment._id)}>
                         Delete
                       </a>
                     </td>

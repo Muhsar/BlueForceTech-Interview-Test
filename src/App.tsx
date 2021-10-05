@@ -5,7 +5,6 @@ import { Helmet } from "react-helmet";
 // import { Helmet } from 'react';
 // import useToast from './Alerts';
 import Home from './pages/Home';
-import Test from './pages/Test';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import useToast from "Alerts";
@@ -41,7 +40,6 @@ const { showAlert, Toast } = useToast();
           <Toast />
             <Switch location={location} key={location.pathname}>
               <Route exact path="/" component={Home} />
-              <Route exact path="/test" component={Test} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/admin" component={Admin} />
             </Switch>
