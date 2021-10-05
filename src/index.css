@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Great Vibes;
+    src: url('https://fonts.googleapis.com/css?family=Great Vibes');
+  }
+@font-face {
+    font-family: Montserrat;
+    src: url('./fonts/Montserrat-Regular.ttf');
+  }
+@font-face {
+    font-family: Dosis;
+    src: url('./fonts/Dosis-Regular.ttf');
+  }
+@font-face {
+    font-family: Dancing Script;
+    src: url('./fonts/static/DancingScript-Regular.ttf');
+  }
+  
+  html,body,* {
+    font-family: 'Montserrat';
+  }
+  .font-writing {
+    font-family: 'Great Vibes',sans-serif;
+  }
+  .font-script {
+    font-family: 'Dancing Script',sans-serif;
+  }
+  .font-mont {
+    font-family: 'Montserrat',sans-serif;
+  }
+  
