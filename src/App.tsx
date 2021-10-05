@@ -12,6 +12,19 @@ import useToast from "Alerts";
 export const ToastContext = React.createContext<any>(null)
 function App() {
 const { showAlert, Toast } = useToast();
+const UserRoutes = ({location}) => (
+  <Switch location={location} key={location.pathname}>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+            </Switch>
+)
+const AdminRoutes = ({location}) => (
+  <Switch location={location} key={location.pathname}>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/admin" component={Admin} />
+            </Switch>
+)
   return (
     <>
       <Helmet>
@@ -38,11 +51,9 @@ const { showAlert, Toast } = useToast();
         render={({location}) => (
           <AnimatePresence exitBeforeEnter>
           <Toast />
-            <Switch location={location} key={location.pathname}>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/admin" component={Admin} />
-            </Switch>
+            {
+              localStorage?.token && localStorage?.token!==undefined ? <AdminRoutes location={location} /> : <UserRoutes location={location} />
+            }
           </AnimatePresence>
         )}
          />

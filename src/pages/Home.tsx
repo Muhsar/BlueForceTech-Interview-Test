@@ -175,7 +175,7 @@ export default function Home() {
                     id="full_name"
                     autoComplete="full_name"
                     placeholder="Enter Your Full Name"
-                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500"
                   />
                 </div>
               </div>
@@ -195,7 +195,7 @@ export default function Home() {
                     type="email"
                     placeholder="Enter Email Address"
                     autoComplete="email"
-                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500"
                   />
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default function Home() {
                     type="tel"
                     placeholder="Enter Mobile Number"
                     autoComplete="phone_number"
-                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500"
                   />
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function Home() {
                     name="time"
                     type="time"
                     autoComplete="time"
-                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500"
                   />
                 </div>
               </div>
@@ -277,7 +277,7 @@ export default function Home() {
                     id="reason"
                     name="reason"
                     minRows={4}
-                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    className="block w-full px-4 py-3 border-gray-400 rounded-md shadow-sm focus:ring-gray-500 focus:border-gray-500"
                     defaultValue={""}
                   />
                 </div>
@@ -286,7 +286,7 @@ export default function Home() {
                 <button
                 disabled={disabled}
                   type="submit"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium text-white bg-gray-600 border border-transparent rounded-md shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                 >
                   Book Appointment
                 </button>
