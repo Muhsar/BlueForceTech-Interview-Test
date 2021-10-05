@@ -129,7 +129,7 @@ const Trigger = ({setOpen, click}) => (
           <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 md:hidden">
       {appointments?.map((app) => (
         <li key={app.id} className="col-span-1 bg-white divide-y divide-gray-200 rounded-lg shadow">
           <div className="flex items-center justify-between w-full p-6 space-x-6">
