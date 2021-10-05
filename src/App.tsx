@@ -16,7 +16,7 @@ const { showAlert, Toast } = useToast();
   return (
     <>
       <Helmet>
-        <title>Peng Wedding</title>
+        <title>BlueForceTech</title>
         <div>
           <meta name="description" content="Top Tech Provider For Weddings" />
           <meta

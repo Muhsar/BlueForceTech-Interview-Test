@@ -4,3 +4,9 @@ build
 node_modules
 ./node_modules
 /node_modules
+public/style.css
+./public/style.css
+/public/style.css
+public/fonts
+./public/fonts
+/public/fonts
